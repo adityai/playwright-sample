@@ -14,8 +14,8 @@ test('test', async ({ page }) => {
 
   // Fill [placeholder="1231 Main St, Hollywood, CA 90210, USA"]
   await page.type('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', 'San Francisco CA, USA', {delay: 100});
-  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', 'Space', {delay: 100});  
-  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', "ArrowDown", {delay: 100});
+  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', 'Space');  
+  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', "ArrowDown");
   await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', "Enter");
 
   // Click text=Continue
@@ -44,4 +44,3 @@ test('test', async ({ page }) => {
   await expect(page).toHaveURL('https://www.blueshieldca.com/fad/search');
 
 });
-

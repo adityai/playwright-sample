@@ -13,8 +13,9 @@ test('test', async ({ page }) => {
   await expect(page).toHaveURL('https://www.blueshieldca.com/fad/location');
 
   // Fill [placeholder="1231 Main St, Hollywood, CA 90210, USA"]
-  await page.fill('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', 'San Francisco CA, USA');
-  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', "ArrowDown");
+  await page.type('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', 'San Francisco CA, USA', {delay: 100});
+  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', 'Space', {delay: 100});  
+  await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', "ArrowDown", {delay: 100});
   await page.press('[placeholder="1231 Main St, Hollywood, CA 90210, USA"]', "Enter");
 
   // Click text=Continue
@@ -26,8 +27,8 @@ test('test', async ({ page }) => {
   await expect(page).toHaveURL('https://www.blueshieldca.com/fad/plans/planselect');
 
   // Click text=2022
-  await page.focus('text=2022');
-  await page.click('text=2022');
+  await page.focus('#planYearDropdown');
+  await page.click('#planYearDropdown');
 
   // Click text=2023
   await page.click('text=2023');

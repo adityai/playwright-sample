@@ -37,10 +37,16 @@ test('test', async ({ page }) => {
   await page.click('text=Select plan type');
 
   // Press Enter
-  await page.press('text=Blue Shield of California PPO Network', 'Enter');
+  await page.press('text=Access+ HMO', 'Enter');
+
+  // Click text=Select subplan
+  await page.click('text=Select subplan');
+  // Click text=Access+ HMO Savenet
+  await page.click('text=Access+ HMO Savenet');
 
   // Click text=Continue with this plan
   await page.click('text=Continue with this plan');
   await expect(page).toHaveURL('https://www.blueshieldca.com/fad/search');
 
 });
+
